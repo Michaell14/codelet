@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link"
-import { Box, Text, Flex, Button, Image } from '@chakra-ui/react';
+import { Box, Text, Flex, Button, Image, HStack } from '@chakra-ui/react';
 import {
     Menu,
     MenuButton,
@@ -29,15 +29,11 @@ function Header() {
                             <Text fontSize={"30px"} color={"purple.100"} fontWeight={700} ml={-2} mt={1}>odelet</Text>
                         </Flex>
                     </Link>
-                    <Menu isLazy>
-                        <MenuButton color={'purple.100'}>Projects</MenuButton>
-                        <MenuList>
-                            {/* MenuItems are not rendered unless Menu is open */}
-                            <MenuItem>Art</MenuItem>
-                            <MenuItem>Math</MenuItem>
-                            <MenuItem>Design</MenuItem>
-                        </MenuList>
-                    </Menu>
+                    <HStack bottom={0}>
+                        <Link href="/components/projects"><Text ml={5} _hover={{cursor: "pointer"}}>Projects</Text></Link>
+                        <Link href="/components/examples"><Text ml={5} _hover={{cursor: "pointer"}}>Examples</Text></Link>
+                        <Link href="/components/team"><Text ml={5} _hover={{cursor: "pointer"}}>Team</Text></Link>
+                    </HStack>
                 </Flex>
                 <Box>
                     <Link href='/components/login'><Button _hover={{color:"#D3D3D3"}} bg={"linear-gradient(315deg, #6c34b2 0%, #d058c6 100%)"} mr={5} h={"34px"} color={"#f5f5f5"}>Log In</Button></Link>
